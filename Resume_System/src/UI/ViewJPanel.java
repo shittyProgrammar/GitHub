@@ -30,26 +30,48 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void displayResume(Resume resume)
         {
-        
-       firstNameJLabel.setText(resume.getFirstName());
-       lastNameJLabel.setText(resume.getLastName());
-       addressLine1JLabel.setText(resume.getAddressLine1());
-       addressLine2JLabel.setText(resume.getAddressLine2());
-       cityJLabel.setText(resume.getCity());
+        String firstName = resume.getFirstName();
+       firstNameJLabel.setText(firstName);
+       String lastName = resume.getLastName();
+       lastNameJLabel.setText(lastName);
+       String addressLine1 = resume.getAddressLine1();
+       addressLine1JLabel.setText(addressLine1);
+       String addressLine2 = resume.getAddressLine2();
+       addressLine2JLabel.setText(addressLine2);
+       String city = resume.getCity();
+       cityJLabel.setText(city);
+       String country = resume.getCountry();
        countryJLabel.setText(resume.getCountry());
+       String  affiliation = resume.getAffiliation();
        affliationLabel.setText(resume.getAffiliation());
+       String email =resume.getEmailID();
        emailJLabel.setText(resume.getEmailID());
+       String objective = resume.getCareerObjective();
        objectiveJLabel.setText(resume.getCareerObjective());
+       String degree1 = resume.getEducationDegree1();
        degree1JTextField.setText(resume.getEducationDegree1());
+       String degree2 = resume.getEducationDegree2();
        degree2JTextField.setText(resume.getEducationDegree2());
+       String degree3 = resume.getEducationDegree3();
        degree3JTextField.setText(resume.getEducationDegree3());
+       String startDate1 = resume.getDegreeStartDate1();
        start1JTextField.setText(resume.getDegreeStartDate1());
+       String startDate2 = resume.getDegreeStartDate2();
        startDate2JTextField.setText(resume.getDegreeStartDate2());
+       String startDate3 = resume.getDegreeStartDate3();
        startDate3JTextField.setText(resume.getDegreeStartDate3());
+       String endDate1 = resume.getDegreeEndDate1();
        endDate1JTextField.setText(resume.getDegreeEndDate1());
+        String endDate2 = resume.getDegreeEndDate2();
        endDate2JTextField.setText(resume.getDegreeEndDate2());
+        String endDate3 = resume.getDegreeEndDate3();
        endDate3JTextField.setText(resume.getDegreeEndDate3());
+       String certification = resume.getCertification();
        certificationListJLabel.setText(resume.getCertification());
+       String skills = resume.getSkills();
+       skillSetJLabel.setText(resume.getSkills());
+       String years = resume.getSkills();
+       yearsJLabel.setText(resume.getSkills());
        
        
        String imageFilePath  = resume.getBrowseImagePath();
@@ -73,6 +95,7 @@ pictureJLabel.setIcon(newImage);
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         firstNameJLabel = new javax.swing.JLabel();
         lastNameJLabel = new javax.swing.JLabel();
         addressLine1JLabel = new javax.swing.JLabel();
@@ -112,6 +135,8 @@ pictureJLabel.setIcon(newImage);
         pictureJLabel = new javax.swing.JLabel();
         affiliationHeadingJLabel = new javax.swing.JLabel();
         affliationLabel = new javax.swing.JLabel();
+
+        jFormattedTextField1.setText("jFormattedTextField1");
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -208,13 +233,13 @@ pictureJLabel.setIcon(newImage);
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 447, 1164, -1));
 
         workExperienceJLabel.setText("Work Experience : ");
-        add(workExperienceJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 815, -1, -1));
+        add(workExperienceJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 810, -1, -1));
 
         yearsJLabel.setText(" ");
-        add(yearsJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 815, 137, -1));
+        add(yearsJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 810, 137, -1));
 
         skillsHeaderJLabel.setText("Skills : ");
-        add(skillsHeaderJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 944, -1, -1));
+        add(skillsHeaderJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 940, -1, -1));
 
         skillSetJLabel.setText(" ");
         add(skillSetJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 892, 1182, 136));
@@ -267,6 +292,7 @@ pictureJLabel.setIcon(newImage);
     private javax.swing.JLabel endDate3JLabel;
     private javax.swing.JTextField endDate3JTextField;
     private javax.swing.JLabel firstNameJLabel;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lastNameJLabel;

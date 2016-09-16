@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 
 
 
+
 /**
  *
  * @author sneha
@@ -21,7 +22,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    
+    private Boolean valid;
     private Resume resume;
     public CreateJPanel(Resume resume) {
         initComponents();
@@ -99,7 +100,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         objectiveJTextArea = new javax.swing.JTextArea();
         browsePathJTextField = new javax.swing.JTextField();
-        jScrollPane = new javax.swing.JScrollPane();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -281,13 +281,14 @@ public class CreateJPanel extends javax.swing.JPanel {
         emailJTextField.setText(" ");
         add(emailJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(1008, 424, 328, -1));
 
+        submitButton.setFont(new java.awt.Font("Tahoma", 1, 27)); // NOI18N
         submitButton.setText("Submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
             }
         });
-        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, 1628, -1, -1));
+        add(submitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 1540, 180, 60));
 
         certifictionsJTextArea.setColumns(20);
         certifictionsJTextArea.setRows(5);
@@ -303,7 +304,6 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         browsePathJTextField.setText(" ");
         add(browsePathJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 1560, 469, -1));
-        add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(1502, 2, 20, 1710));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addressLine1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressLine1TextFieldActionPerformed
@@ -342,21 +342,62 @@ public class CreateJPanel extends javax.swing.JPanel {
         resume.setWorkExperience(yearsJTextField.getText());
         resume.setCertification(certifictionsJTextArea.getText());
         resume.setBrowseImagePath(browsePathJTextField.getText());
+        String skillSet =" ";
+        if (javaJCheckBox.isSelected())
+        {
+            skillSet= skillSet + "Java"+"\n"+" ";
+        }
         
+        if (webDesignJCheckBox.isSelected())
+        {
+            if (!(skillSet.equals(" ")))
+            { 
+           
+                skillSet= skillSet +", ";
+            }
+            skillSet= skillSet + "Web Design"+"\n"+" ";
+        }
+        if (dotnetJCheckBox.isSelected())
+        {
+            if (!(skillSet.equals(" ")))
+            { 
+          
+                skillSet= skillSet +", ";
+            }
+            skillSet= skillSet + "dotNet"+"\n" + " ";
+        }
+        if (databaseJCheckBox.isSelected())
+        {
+            if (!(skillSet.equals(" ")))
+            { 
+      
+                skillSet= skillSet +", ";
+            }
+            skillSet= skillSet + "Data Base"+"\n"+ " ";
+        }
+        if (bigDataJCheckBox.isSelected())
+        {
+            if (!(skillSet.equals(" ")))
+            { 
+          
+                skillSet= skillSet +", ";
+            }
+            skillSet= skillSet + "Big Data"+"\n" + " ";
+        }
+        if (cJCheckBox.isSelected())
+        {
+            if (!(skillSet.equals(" ")))
+            { 
         
-        JOptionPane.showMessageDialog(null,"Resume has been Created Successfully");
+                skillSet= skillSet +", ";
+            }
+            skillSet= skillSet + "C#"+"\n"+ " ";
+        }
         
-        JScrollPane scrPane = new JScrollPane(container);
-    add(scrPane);
-    scrPane.setLayout(new ScrollPaneLayout());
-    init();
-
-    add(initConnectors());
-
-    setSize(800, 600);
-    setLocationRelativeTo(null);
+        resume.setSkills(skillSet);
         
-        
+                 
+        JOptionPane.showMessageDialog(null,"The Resume was created Successfully");
         
         
                 
@@ -429,7 +470,6 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel endDte1JLabel;
     private javax.swing.JLabel firstNameJLabel;
     private javax.swing.JTextField firstNameTextField;
-    private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
